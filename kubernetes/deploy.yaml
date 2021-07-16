@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cat
+
+---  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: cat
+  name: cat-master
+  namespace: cat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: cat
+  template:
+    metadata:
+      labels:
+        run: cat
+    spec:
+      containers:
+      - image: gcr.io/clever-circlet-317904/cat:latest
+        name: cat
+        ports:
+        - containerPort: 8080
+
