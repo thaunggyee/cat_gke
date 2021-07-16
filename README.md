@@ -1,6 +1,10 @@
-Docker Curriculum
-===
+var
 
- Learn to build and deploy your distributed applications easily to the cloud with Docker
+gcloud config set project $PROJECT
+gcloud config set compute/zone $ZONE
+gcloud config set container/cluster $CLUSTER
 
-Follow the curriculum on [docker-curriculum.com](https://docker-curriculum.com/)
+trigger
+
+_CLOUDSDK_COMPUTE_ZONE --> us-central1-b
+_CLOUDSDK_CONTAINER_CLUSTER --> gke-deploy-cluster
